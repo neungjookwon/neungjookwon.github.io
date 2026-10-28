@@ -254,6 +254,20 @@
   .award-inline { display: inline-flex; align-items: center; gap: 5px; color: var(--accent); font-weight: 500; }
   .award-inline svg { width: 14px; height: 14px; flex: none; }
 
+  /* Research grouped by organization */
+  .org { padding-bottom: 36px; }
+  .org:last-child { padding-bottom: 0; }
+  .org-head { display: grid; grid-template-columns: 176px 1fr; gap: 24px; margin-bottom: 16px; }
+  .org-name { margin: 0 0 2px; font-size: 18px; font-weight: 600; line-height: 1.45; color: var(--text-strong); }
+  .org-projects { list-style: none; margin: 0; padding: 0; }
+  .org-projects > li { display: grid; grid-template-columns: 176px 1fr; gap: 24px; padding: 0 0 18px; }
+  .org-projects > li:last-child { padding-bottom: 0; }
+  .org-projects .when { padding-top: 2px; line-height: 1.6; white-space: nowrap; }
+  .org-projects > li.current .when { color: var(--accent); font-weight: 500; }
+  .proj { border-left: 2px solid var(--border); padding-left: 16px; }
+  .proj-title { margin: 0 0 3px; font-size: 16.5px; font-weight: 500; line-height: 1.5; color: var(--text-strong); }
+  .proj .item-extra { margin-top: 8px; }
+
   /* Skills */
   .skills { display: grid; grid-template-columns: 176px 1fr; gap: 12px 24px; margin: 0; }
   .skills dt { font-weight: 500; color: var(--text-strong); }
@@ -280,6 +294,9 @@
     .news li { grid-template-columns: 1fr; gap: 2px; }
     .entries > li { grid-template-columns: 1fr; gap: 2px; padding-bottom: 26px; }
     .entries .when br { display: none; }
+    .org-head, .org-projects > li { grid-template-columns: 1fr; gap: 2px; }
+    .org-head > div:first-child { display: none; }
+    .org-projects > li { padding-bottom: 16px; }
     section { padding-top: 52px; }
     .section-head h2 { font-size: 23px; }
     .section-head .count { display: none; }
@@ -425,30 +442,53 @@
        ============================================================ -->
   <section id="research">
     <div class="section-head"><h2>Research Experience</h2></div>
-    <ul class="entries">
-      <li class="current">
-        <div class="when mono">Jun 2026 – Present</div>
-        <div>
-          <h3 class="item-title">Hallucinations in Knowledge-Edited LLMs</h3>
-          <p class="item-meta">Data &amp; Language Intelligence Lab (SKKU)<span class="sep">·</span>Prof. YunSeok Choi</p>
+    <div class="orgs">
+
+      <div class="org">
+        <div class="org-head">
+          <div></div>
+          <div>
+            <h3 class="org-name">Data &amp; Language Intelligence Lab, Sungkyunkwan University</h3>
+            <p class="item-meta">Undergraduate Research Intern<span class="sep">·</span>Advisor: Prof. YunSeok Choi</p>
+          </div>
         </div>
-      </li>
-      <li>
-        <div class="when mono">Mar 2025 – Jun 2025</div>
-        <div>
-          <h3 class="item-title">Visual Grounding and Hallucination in Multimodal LLMs under Commonsense Conflict</h3>
-          <p class="item-meta">Undergraduate Research Program<span class="sep">·</span>Data &amp; Language Intelligence Lab (SKKU)<span class="sep">·</span>Prof. YunSeok Choi</p>
-          <div class="item-extra"><span class="tag">Poster at CKAIA 2025</span></div>
+        <ul class="org-projects">
+          <li class="current">
+            <div class="when mono">Jun 2026 – Present</div>
+            <div class="proj">
+              <h4 class="proj-title">Hallucinations in Knowledge-Edited LLMs</h4>
+            </div>
+          </li>
+          <li>
+            <div class="when mono">Mar 2025 – Jun 2025</div>
+            <div class="proj">
+              <h4 class="proj-title">Visual Grounding and Hallucination in Multimodal LLMs under Commonsense Conflict</h4>
+              <p class="item-meta">Undergraduate Research Program (URP)</p>
+              <div class="item-extra"><span class="tag">Poster at CKAIA 2025</span></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="org">
+        <div class="org-head">
+          <div></div>
+          <div>
+            <h3 class="org-name">Samsung Medical Center, Seoul, Korea</h3>
+            <p class="item-meta">Research Intern</p>
+          </div>
         </div>
-      </li>
-      <li>
-        <div class="when mono">Jan 2025 – Apr 2025</div>
-        <div>
-          <h3 class="item-title">Structuring CT Radiology Reports with LLMs and RAG</h3>
-          <p class="item-meta">Research Intern<span class="sep">·</span>Samsung Medical Center</p>
-        </div>
-      </li>
-    </ul>
+        <ul class="org-projects">
+          <li>
+            <div class="when mono">Jan 2025 – Apr 2025</div>
+            <div class="proj">
+              <h4 class="proj-title">Structuring CT Radiology Reports with LLMs and RAG</h4>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
   </section>
 
   <!-- ============================================================
@@ -522,7 +562,7 @@
         </div>
       </li>
       <li>
-        <div class="when mono">Dec 2024 – Aug 2025</div>
+        <div class="when mono">Dec 2024 – Jul 2025</div>
         <div>
           <h3 class="item-title">Fundamentals of Data Analytics <span class="code mono">DASF006</span></h3>
           <p class="item-meta">Teaching Assistant<span class="sep">·</span>Sungkyunkwan University</p>
